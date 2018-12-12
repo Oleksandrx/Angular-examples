@@ -1,0 +1,68 @@
+<!-- 14 - События и формы -->
+
+<div class="bg-primary text-white p-1">
+    Selected Product: {{selectedProduct || ''}}
+</div>
+<br />    
+
+<table class="table table-sm table-bordered m-t-1">
+    
+    <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+    
+    <tr *ngFor="let item of getProducts(); 
+        let i=index" 
+        [class.bg-info]="getSelected(item)" 
+        (mouseover)="selectedProduct=item.name"
+    >
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+</table>
+<br />
+<div class="form-group">
+    <label>Product Name</label>
+    <input class="form-control" (input)="selectedProduct=$event.target.value" />
+</div>
+<br />
+
+<p><strong>Reference variables (#)</strong></p>
+<div class="bg-info text-white p-1">
+    Selected Product: {{product.value || '(None)'}}
+</div>
+
+<table class="table table-sm table-bordered m-t-1">
+    <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+    <tr *ngFor="let item of getProducts(); 
+        let i = index"
+        (mouseover)="product.value=item.name"
+        [class.bg-info]="product.value==item.name">
+        <td>{{i + 1}}</td>
+        <td>{{item.name}}</td>
+        <td>{{item.category}}</td>
+        <td>{{item.price}}</td>
+    </tr>
+</table>
+<br />
+<div class="form-group">
+    <label>Product Name</label>
+    <!-- Reference variables - #product -->
+    <input #product class="form-control" (input)="false" />
+</div>
+
+<!-- 
+***press AnyKey
+<input #product class="form-control" (keyup)="selectedProduct=product.value" /> 
+-->
+
+<!-- 
+***press Enter
+<input #product class="form-control" (keyup.enter)="selectedProduct=product.value" /> 
+-->
+
+<!-- 
+Angular не обновляет привязки данных в шаблоне, когда пользователь редактирует содержимое элемента input, 
+при отсутствии привязки события для этого элемента. Назначение false в привязке предоставляет Angular 
+выражение для обработки, чтобы начался процесс обновления, а текущее содержимое элемента input распространилось в шаблоне. 
+-->

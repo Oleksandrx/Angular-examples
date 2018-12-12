@@ -1,0 +1,46 @@
+
+<div class="bg-info text-white p-1 m-1">Model Data: {{jsonProduct}}</div>
+
+<form novalidate (ngSubmit)="addProduct(newProduct)">
+    <div class="form-group">
+        <label>Name</label>
+        <input class="form-control"
+        name="name" 
+        #name="ngModel" 
+        [(ngModel)]="newProduct.name"
+        required
+        minlength="5"
+        pattern="^[A-Za-z ]+$" />
+        <ul class="text-danger list-unstyled" *ngIf="name.dirty && name.invalid">
+            <li *ngIf="name.errors.required">
+                You must enter a product name
+            </li>
+            <li *ngIf="name.errors.pattern">
+                Product names can only contain letters and spaces
+            </li>
+            <li *ngIf="name.errors.minlength">
+                Product names must be at least {{name.errors.minlength.requiredLength}} characters
+            </li>
+        </ul>
+
+        <label>Category</label>
+        <input class="form-control" 
+        name="category" 
+        [(ngModel)]="newProduct.category" />
+    
+        <label>Price</label>
+        <input class="form-control" 
+        name="price"
+        [(ngModel)]="newProduct.price" />
+
+    </div>
+
+    <button class="btn btn-primary" type="submit"> Create </button>
+
+</form>
+
+<!-- 
+атрибуту name элемента input присваивается значение name. 
+средства проверки данных Angular работают только при наличии элемента form, и если вы примените 
+директиву ngControl к элементу, не содержащемуся в форме, Angular выдаст сообщение об ошибке.
+-->

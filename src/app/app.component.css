@@ -1,0 +1,42 @@
+:host {
+    flex-direction: column;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    display: block;
+    /* display: flex; */
+}
+header {
+  height: 30px;
+  background: url('/assets/angular.svg') no-repeat;
+  padding: 0 0 0 65px;
+}
+main, footer {
+	margin: 10px;
+}
+main {
+   flex: 1;
+   display: flex;
+}
+nav {
+  width: 200px;
+  order: -1
+}
+nav h4 {
+  margin: 4px 0 5px 0;
+}
+nav a {
+  text-decoration: none;
+  transition: all 0.5s;
+  color: #E03237;
+}
+nav a.active {
+  border-radius: 3px;
+  padding: 2px 8px;
+  background-color: #E03237;
+  color:white;
+}
+article {
+   flex: 1;
+}
+footer {
+  	height: 20px;
+}
