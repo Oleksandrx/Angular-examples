@@ -1,0 +1,26 @@
+<h3>The Open Movie Database</h3>
+
+<div>
+    <label for="movieTitle">Type movie title:</label>
+    <input id="movieTitle" type="text" [(ngModel)]="movieTitle">
+</div>
+<div>
+    <label for="selectedMovie"> - OR -  Select movie title:</label>
+    <select id="selectedMovie" [value]="selectedMovie || 0" (change)="selectMovie($event)">
+    <option value="0">None</option>
+    <option value="1">Pulp Fiction</option>
+    <option value="2">From Dusk Till Dawn</option>
+    <option value="3">Four Rooms</option>
+    <option value="4">Django Unchained</option>
+
+    <!-- <option value="1">{{ 0.1 | percent }}</option> -->
+    </select>
+</div>
+<button (click)="searchMovieByTitle()">Search</button>
+<hr>
+<div *ngIf="response">
+    <p style="font-weight: bold">Movie: {{response.Title}}</p>
+    <p>Actors: {{response.Actors}}</p>
+    <p>Awards: {{response.Awards}}</p>
+    <p>Plot: {{response.Plot}}</p>
+</div>

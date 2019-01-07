@@ -1,0 +1,14 @@
+<hr><br>
+<ng-container *ngIf="isLoggedIn; then loggedIn; else loggedOut">
+</ng-container>
+
+<ng-template #loggedIn>
+    <p>loggedIn</p><br>
+</ng-template>
+
+<ng-template #loggedOut>
+    <p>loggedOut</p><br>
+</ng-template>
+
+<button *ngIf="isLoggedIn" (click)="changeLogged($event)">Toggle IN</button>
+<button *ngIf="!isLoggedIn" (click)="changeLogged($event)">Toggle OUT</button>

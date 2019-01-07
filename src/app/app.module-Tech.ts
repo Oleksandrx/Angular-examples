@@ -1,13 +1,10 @@
 import { BrowserModule } from "@angular/platform-browser";
 import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 
 import { AppComponent } from "./app.component";
-
 import { AppRoutingModule } from "./app-routing.module";
-import { HttpService } from "./http.service";
-import { DataBindingModule } from "./01-Data-Binding/01.Data.Binding.module";
-import { EventsModule } from "./02-Events/02.Events.module"
-import { HTTPServicesModule } from "./03-HTTP-services/03.HTTP.Services.module";
+import { DataBindingModule } from "./01-Data-Binding/attribute-directives.module";
 
 @NgModule({
   declarations: [
@@ -15,12 +12,11 @@ import { HTTPServicesModule } from "./03-HTTP-services/03.HTTP.Services.module";
   ],
   imports: [
     BrowserModule,
+    ReactiveFormsModule,
     AppRoutingModule,
-    DataBindingModule,
-    EventsModule,
-    HTTPServicesModule
+    DataBindingModule
   ],
-  providers: [ HttpService ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 
