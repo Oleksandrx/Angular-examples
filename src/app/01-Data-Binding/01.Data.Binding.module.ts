@@ -7,7 +7,6 @@ import { InterpolationBindingComponent } from "./01-Interpolation-Binding/interp
 import { PropertyBindingComponent } from "./02-Property-Binding/property-binding.component";
 import { EventBindingComponent } from "./03-Event-Binding/event-binding.component";
 import { TwoWayBindingComponent } from "./04-Two-Way-Binding/two-way-binding.component";
-import { FormDataValidationComponent } from "./05-form-data-validation/form-data-validation.component";
 
 @NgModule({
     imports: [
@@ -19,8 +18,7 @@ import { FormDataValidationComponent } from "./05-form-data-validation/form-data
       InterpolationBindingComponent,
       PropertyBindingComponent,
       EventBindingComponent,
-      TwoWayBindingComponent,
-      FormDataValidationComponent
+      TwoWayBindingComponent
     ]
   })
 

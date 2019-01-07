@@ -8,6 +8,7 @@ import { HttpService } from "./http.service";
 import { DataBindingModule } from "./01-Data-Binding/01.Data.Binding.module";
 import { EventsModule } from "./02-Events/02.Events.module"
 import { HTTPServicesModule } from "./03-HTTP-services/03.HTTP.Services.module";
+import { MyFormsModule } from "./04-Forms/04.Forms.module";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HTTPServicesModule } from "./03-HTTP-services/03.HTTP.Services.module";
     AppRoutingModule,
     DataBindingModule,
     EventsModule,
-    HTTPServicesModule
+    HTTPServicesModule,
+    MyFormsModule
   ],
   providers: [ HttpService ],
   bootstrap: [AppComponent]

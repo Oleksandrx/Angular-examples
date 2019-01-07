@@ -3,14 +3,16 @@
 
 <form novalidate (ngSubmit)="addProduct(newProduct)">
     <div class="form-group">
+
         <label>Name</label>
         <input class="form-control"
-        name="name" 
-        #name="ngModel" 
-        [(ngModel)]="newProduct.name"
-        required
-        minlength="5"
-        pattern="^[A-Za-z ]+$" />
+            name="name" 
+            #name="ngModel" 
+            [(ngModel)]="newProduct.name"
+            required
+            minlength="5"
+            pattern="^[A-Za-z ]+$" 
+        />
         <ul class="text-danger list-unstyled" *ngIf="name.dirty && name.invalid">
             <li *ngIf="name.errors.required">
                 You must enter a product name
@@ -25,21 +27,24 @@
 
         <label>Category</label>
         <input class="form-control" 
-        name="category" 
-        [(ngModel)]="newProduct.category" />
+            name="category" 
+            [(ngModel)]="newProduct.category" 
+        />
     
         <label>Price</label>
         <input class="form-control" 
-        name="price"
-        [(ngModel)]="newProduct.price" />
+            name="price"
+            [(ngModel)]="newProduct.price" 
+        />
 
     </div>
 
     <button class="btn btn-primary" 
-            type="submit"
-            [disabled]="formSubmitted && form.invalid"
-            [class.btn-secondary]="formSubmitted && form.invalid">
-        Create </button>
+        type="submit"
+        [disabled]="formSubmitted && form.invalid"
+        [class.btn-secondary]="formSubmitted && form.invalid">
+        Create 
+    </button>
 
 </form>
 
@@ -48,3 +53,4 @@
 средства проверки данных Angular работают только при наличии элемента form, и если вы примените 
 директиву ngControl к элементу, не содержащемуся в форме, Angular выдаст сообщение об ошибке.
 -->
+<!-- http://stepansuvorov.com/blog/2017/07/angular-forms-and-validation/ -->

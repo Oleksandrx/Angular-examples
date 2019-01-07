@@ -3,15 +3,16 @@ import { Component } from "@angular/core";
 import { Model } from "../../repository.model";
 import { Product } from "../../product.model";
 
-// head 12 - Data Binding
-
 @Component({
-  selector: "app-form-data-validation",
-  templateUrl: "./form-data-validation.component.html",
-  styleUrls: ["form-data-validation.component.css"]
+  selector: "app-template-driven-form",
+  templateUrl: "./template-driven-form.component.html",
+  styleUrls: ["./template-driven-form.component.css"]
 })
 
-export class FormDataValidationComponent {
+export class AppTemplateDrivenComponent {
+
+    constructor() {}
+    
     model: Model = new Model();
     selectedProduct: string;
 
@@ -36,4 +37,9 @@ export class FormDataValidationComponent {
     addProduct(p: Product) {
         console.log("New Product: " + this.jsonProduct);
     }
+
 }
+
+
+
+
