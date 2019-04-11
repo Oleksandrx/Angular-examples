@@ -1,0 +1,10 @@
+:host-context(body) {
+    display: inline-block;
+    background: #ccc;
+    padding: 5px 2px;
+    cursor: pointer;
+  }
+  
+  :host:hover {
+    background: #ddd;
+  }

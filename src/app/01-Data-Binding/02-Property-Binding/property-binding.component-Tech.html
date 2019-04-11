@@ -1,0 +1,29 @@
+<!-- head 12, 13 - Data Binding -->
+
+<div [ngClass] = "'p-3 text-white ' + getClasses()" >
+    Hello, World.
+</div>
+<br />
+
+<div [ngClass]="['bg-primary', 'text-white', 'p-3']" [textContent]="'There are only ' + (model.getProducts()?.length || 'None') + ' products in the model'">
+</div>
+<br />
+
+<div [className]="'bg-primary text-white p-3'" [textContent]="'There are only ' + (model.getProducts()?.length || 'None') + ' products in the model'">
+</div>
+<br />
+
+<label>Name:</label>
+<input class="form-control" [value]="model.getProduct(1)?.name || 'None'" />
+<br />
+
+<table class="table table-sm table-bordered table-striped m-t-1">
+<tr>
+    <th>1</th><th>2</th><th>3</th><th>4</th><th>5</th>
+</tr>
+<tr>
+    <td [attr.colspan]="model.getProducts().length">
+        {{model.getProduct(1)?.name || 'None'}}
+    </td>
+</tr>
+</table>

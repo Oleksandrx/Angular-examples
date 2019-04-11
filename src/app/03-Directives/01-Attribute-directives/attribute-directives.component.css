@@ -1,0 +1,14 @@
+hr {
+    border: 1px dashed black;
+}
+
+#blueBox {
+    background-color: lightblue;
+    width: 300px;
+    height: 300px;
+}
+
+.pressed {
+    background-color: red;
+    color: white;
+}

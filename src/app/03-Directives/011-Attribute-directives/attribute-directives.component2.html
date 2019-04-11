@@ -1,0 +1,68 @@
+<style>
+    .form-control.ng-touched.ng-invalid{border:2px solid red;} invalid
+    .form-control.ng-touched.ng-valid{border:2px solid green;} valid 
+    ul, li { margin: 0;}
+    div { margin: 2px; padding: 2px;}
+</style>
+
+<div class="container">
+    <div class="row">
+        <div class="col-sm">
+            <form [formGroup]="newProductForm" (ngSubmit)="onSubmit()">
+
+                <div class = "form-group">
+                    <label for="nameProduct">Product name</label>
+                    <input id="nameProduct" type="text" formControlName="nameProduct" class="form-control" />
+                    <div class="alert alert-danger" *ngIf="isControlInvalid('nameProduct')">
+                        <ul>
+                            <li *ngFor="let error of getValidationMessages('nameProduct')">{{error}}</li>
+                        </ul>
+                    </div>
+                    
+                    <label for="categoryProduct">Category</label>
+                    <input id="categoryProduct" type="text" formControlName="categoryProduct" class="form-control" />
+                    <div class="alert alert-danger" *ngIf="isControlInvalid('categoryProduct')">
+                        <ul>
+                            <li *ngFor="let error of getValidationMessages('categoryProduct')">{{error}}</li>
+                        </ul>
+                    </div>
+
+                    <label for="priceProduct">Price</label>
+                    <input id="priceProduct" type="text" formControlName="priceProduct" class="form-control" />
+                    <div class="alert alert-danger" *ngIf="isControlInvalid('categoryProduct')">
+                        <ul>
+                            <li *ngFor="let error of getValidationMessages('categoryProduct')">{{error}}</li>
+                        </ul>
+                    </div>
+
+                </div>    
+                <div class="form-group">
+                    <button type="submit" class="btn btn-primary" [disabled]="!newProductForm.valid">Добавить</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="col-sm">
+            <table class="table table-sm table-bordered table-striped">
+                <tr>
+                    <th></th>
+                    <th>Name</th>
+                    <th>Category</th>
+                    <th>Price</th>
+                </tr>
+                <tr *ngFor="let item of model.getProducts(); let i = index"
+                    [set-attr]="model.getProducts().length < 6 ? 'bg-success' : 'bg-warning'"
+                    [set-product]="item">
+                    <td>{{i + 1}}</td>
+                    <td>{{item.name}}</td>
+                    <td [set-attr]="item.category == 'Soccer' ? 'bg-info' : null">
+                        {{item.category}}
+                    </td>
+                    <td [set-attr]="'bg-info'">{{item.price}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="col-sm">
+        </div>
+    </div>
+</div>

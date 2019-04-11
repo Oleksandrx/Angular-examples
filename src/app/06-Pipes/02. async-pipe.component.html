@@ -1,0 +1,8 @@
+<h3>Async pipe w Promise</h3>
+<button (click) = "getData()">Request</button>
+<p>Response: {{ dataFromServer | async }}</p>
+
+<hr /> 
+<h3>Async pipe w Observable</h3>
+<button (click) = "start()">Start</button>
+<p>Response: {{ time | async }}</p>

@@ -15,7 +15,7 @@ export class AppReactiveFormComponent {
  myFormGroup: FormGroup;
 
 // add FormBuilder
-constructor(private fb: FormBuilder) { }
+constructor(private FormBuilder: FormBuilder) { }
 
 ngOnInit(): void {
   this.initForm();
@@ -33,6 +33,9 @@ onSubmit(): void {
 
   /** TODO: Обработка данных формы */
   console.log(this.myFormGroup.value);
+  
+  Object.keys(controls).forEach(controlName => console.log(controls[controlName].value));
+
 }
 
 isControlInvalid(controlName: string): boolean {
@@ -44,17 +47,9 @@ isControlInvalid(controlName: string): boolean {
 }
 
 private initForm() {
-  this.myFormGroup = this.fb.group({
-    name: ['', [
-      Validators.required,
-      Validators.pattern(/[А-я]/)
-    ]
-    ],
-    email: ['', [
-      Validators.required, 
-      Validators.email
-    ]
-    ]
+  this.myFormGroup = this.FormBuilder.group({
+    name: ['', [Validators.required, Validators.pattern(/[А-я]/)]],
+    email: ['', [Validators.required, Validators.email]]
   });
 }
 

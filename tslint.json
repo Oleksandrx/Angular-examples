@@ -18,7 +18,6 @@
     "forin": true,
     "import-blacklist": [
       true,
-      "rxjs",
       "rxjs/Rx"
     ],
     "import-spacing": true,
@@ -121,7 +120,7 @@
     "directive-selector": [
       true,
       "attribute",
-      "app",
+      // "app",
       "camelCase"
     ],
     "component-selector": [

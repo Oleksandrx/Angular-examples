@@ -1,30 +1,23 @@
-<form [formGroup]="myFirstReactiveForm" (submit)="onSubmit()">
-	
-	<label for="name">имя</label>
-    <input 
-        type="text" 
-        id="name" 
-        formControlName="name" 
-    />
-    <div class="error" *ngIf="isControlInvalid('name')">
-        Имя должно состоять только из русских букв
-    </div>
-	<br/><br/>
+<form [formGroup]="myFormGroup" (submit)="onSubmit()">
+    <div class="form-group">
+        <label for="name">имя</label>
+        <input type="text" id="name" formControlName="name" class="form-control" />
+        <div class="error" *ngIf="isControlInvalid('name')">
+            Имя должно состоять только из русских букв
+        </div>
+        <br />
 
-	<label for="email">email</label>
-    <input 
-        type="text" 
-        id="email" 
-        formControlName="email" 
-    />
-    <div class="error" *ngIf="isControlInvalid('email')">
-        Введите валидный адрес почты
-    </div>
-	<br/><br/>
+        <label for="email">email</label>
+        <input type="text" id="email" formControlName="email" class="form-control" />
+        <div class="error" *ngIf="isControlInvalid('email')">   
+            Введите валидный адрес почты
+        </div>
 
-	<button type="submit">отправить</button>
+        <br />
+        <button type="submit">отправить</button>
+    </div>
 </form>
 
-<hr/><br/>
+<hr />
 
-<div> {{myFirstReactiveForm.value | json}} </div>
+<div> {{myFormGroup.value | json}} </div>

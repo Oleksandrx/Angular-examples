@@ -1,0 +1,25 @@
+<input type="text" [(ngModel)]="value">
+
+<p> {{ value | customPipe }} </p>
+
+<hr />
+
+<input type="text" [(ngModel)]="value" />
+<input type="radio" #metric name="measure"> Metric system
+<input type="radio" name="measure" checked="checked" > Imperial system
+
+<p>{{value | formatDistance : metric.checked }}</p>
+
+<hr />
+
+<h3>Pure Pipe</h3>
+<p>Исходные данные: {{person1.firstName}} {{person1.lastName}}</p>
+<p>Фильтр: {{person1 | purePipe}}</p>
+<button (click)="changePropPerson1()">Поменять свойство person1</button>
+<button (click)="changeRefPerson1()">Поменять ссылку person1</button>
+
+<h3>Impure Pipe</h3>
+<p>Исходные данные: {{person2.firstName}} {{person2.lastName}}</p>
+<p>Фильтр: {{person2 | impurePipe}}</p>
+<button (click)="changePropPerson2()">Поменять свойство person2</button>
+<button (click)="changeRefPerson2()">Поменять ссылку person2</button>

@@ -11,7 +11,7 @@ import { HttpClient } from "@angular/common/http";
 
 export class AppGitHubComponent {
 
-    userName: string = "";
+    userName = "";
     response: any;
 
     constructor(private http: HttpClient) {
@@ -20,10 +20,10 @@ export class AppGitHubComponent {
 
     searchUser() {
         this.http.get("https://api.github.com/users/" + this.userName)
-        .subscribe((response)=>{
+        .subscribe((response) => {
             this.response = response;
             console.log(this.response);
-        })
+        });
 
     }
 }

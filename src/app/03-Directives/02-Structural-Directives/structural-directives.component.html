@@ -1,0 +1,49 @@
+<!-- *** 1 -->
+<div blockRepeat message = "Hello world 1" count = "5"></div>
+<hr>
+<blockRepeat message = "Hello world 2" count = "3"></blockRepeat>
+<hr>
+<div>
+    <h4>Repeat message</h4>
+    <label>Blocks count: <input #cntBlocks [(ngModel)]="countBlocks"/></label>
+    <label>Message: <input #msgBlock [(ngModel)]="messageInBlock"/></label>
+    <button [blockRepeat]>start</button>
+</div>
+<hr>
+<!-- *** 2 -->
+<div *myIf="visible">
+    Test of my IF structural directive
+</div>
+<button (click)="changeVisibility()">Change</button>
+<hr>
+<!-- *** 3 -->
+<div *myDelay = "500">
+        Delay 500
+</div>
+<div *myDelay = "1000">
+        Delay 1000
+</div>
+<div *myDelay = "1500">
+        Delay 1500
+</div>
+<div *myDelay = "2000">
+        Delay 2000
+</div>
+<div *myDelay = "2500">
+        Delay 2500
+</div>
+<div *myDelay = "3000">
+        Delay 3000
+</div>
+<div *myDelay = "3500">
+        Delay 3500
+</div>
+<div *myDelay = "4000">
+        Delay 4000
+</div>
+<hr>
+<!-- *** 4 -->
+<div *setContext="let fn = firstName; let ln = lastName">
+    <p><b>First Name: </b>{{fn}}</p>
+    <p><b>Last Name: </b>{{ln}}</p>
+</div>

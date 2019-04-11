@@ -1,0 +1,50 @@
+<!-- ch 15 - create attribute directives -->
+<!-- *** 1 -->
+<p setColor>
+    <strong> Directive is setting the color to green! </strong> <br/> Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem, eveniet alias. Labore accusamus dignissimos distinctio
+    quis voluptate quam, minus earum sit fugiat tenetur provident, laudantium fuga maiores, repellat cupiditate! Deserunt.
+</p>
+<p>
+    Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eum eveniet hic voluptatum similique at omnis. Iure, commodi facilis
+    voluptas, nostrum est, quam fugit nulla modi sapiente numquam vitae voluptatibus explicabo.
+</p>
+<hr>
+<!-- *** 2 -->
+<p mouseEvent>
+    Mouse event 1
+</p>
+<p mouseEvent>
+    Mouse event 2
+</p>
+<p mouseEvent>
+    Mouse event 3
+</p>
+<hr>
+<!-- *** 3 -->
+<div colorChange="green">
+    <strong>Passing data to Directive 1</strong>
+</div>
+<div [colorChange]="selectedColor">
+        <strong>Passing data to Directive 2</strong> -> set color: <input [(ngModel)]="selectedColor"/>
+</div>
+<div [colorChange]= "colorItem">
+    <strong>Passing data to Directive 3</strong>
+    <button (click) = "setRedColor()">set RED color</button>
+</div>
+<br />
+<hr>
+<!-- *** 4 -->
+<button [confirmDelete] = "onDelete">confirm before delete</button>
+<br />
+<hr>
+<!-- *** 5 -->
+<div getCoords id="blueBox"></div>
+<br />
+<hr>
+<!-- *** 6 -->
+<p clickableElement>
+    <strong>click me</strong>
+</p>
+<div clickableElement>
+    <strong>click me</strong>
+</div>
