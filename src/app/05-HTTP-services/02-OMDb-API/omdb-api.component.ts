@@ -30,7 +30,7 @@ export class OmdbComponent {
     searchMovieByTitle() {
         // this.http.get("http://www.omdbapi.com/?t=" + this.movieTitle)
         // http://www.omdbapi.com/?i=tt3896198&apikey=3c524028
-        this.http.get("http://www.omdbapi.com/?t=Sherlock+Holmes&apikey=3c524028")
+        // this.http.get("http://www.omdbapi.com/?t=Sherlock+Holmes&apikey=3c524028")
         this.http.get("http://www.omdbapi.com/?t=" +this.chosenMovie + "&apikey=3c524028")
         .subscribe((response)=>{
             this.response = response;
